@@ -1,0 +1,35 @@
+services:
+  ome:
+    image: airensoft/ovenmediaengine:latest
+    volumes:
+      - ./rtmp/Server.xml:/opt/ovenmediaengine/bin/origin_conf/Server.xml
+      - ./rtmp/Logger.xml:/opt/ovenmediaengine/bin/origin_conf/Logger.xml
+      - ./rtmp/shared_volumes:/mnt/shared_volumes
+    ports:
+      - "1935:1935" 
+      - "9999:9999/udp" 
+      - "9000:9000" 
+      - "3333:3333"
+      - "3478:3478" 
+      - "10000-10009:10000-10009/udp"
+      - "8081:8081"
+    environment:
+      OME_HOST_IP: ${OME_HOST_IP}
+
+  ovenplayerdemo:
+    image: airensoft/ovenplayerdemo:latest
+    ports:
+      - "8090:80" 
+
+  webrtc-pion:
+    build:
+      context: ./webrtc-pion
+      dockerfile: ./Dockerfile
+    image: webrtc-pion:ma-latest
+    volumes:
+      - ./webrtc-pion:/webrtc-pion
+    entrypoint: /bin/sh
+    command: -c 'cd /webrtc-pion/; go run main.go ws://ome:3333/app/fixme'
+    hostname: webrtc-pion
+    depends_on:
+      - ome

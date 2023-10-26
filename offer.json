@@ -1,0 +1,40 @@
+{
+    "candidates": [
+        {
+            "candidate": "candidate:0253986714 1 UDP 50 172.22.0.4 10004 typ host",
+            "sdpMLineIndex": 0
+        },
+        {
+            "candidate": "candidate:9621380754 1 UDP 50 185.233.95.134 10004 typ host",
+            "sdpMLineIndex": 0
+        }
+    ],
+    "code": 200,
+    "command": "offer",
+    "iceServers": [
+        {
+            "credential": "airen",
+            "urls": [
+                "turn:185.233.95.134:3478?transport=tcp",
+                "turn:172.22.0.4:3478?transport=tcp"
+            ],
+            "username": "ome"
+        }
+    ],
+    "ice_servers": [
+        {
+            "credential": "airen",
+            "urls": [
+                "turn:185.233.95.134:3478?transport=tcp",
+                "turn:172.22.0.4:3478?transport=tcp"
+            ],
+            "user_name": "ome"
+        }
+    ],
+    "id": 2135555650,
+    "peer_id": 0,
+    "sdp": {
+        "sdp": "v=0\r\no=OvenMediaEngine 100 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE ufdniv\r\na=group:LS ufdniv\r\na=msid-semantic:WMS 0eh1B7q5yODsdalHwLnjAIkTuXQvxK6VfS98\r\na=fingerprint:sha-256 6F:F3:D6:3C:57:41:C4:4D:68:72:1F:4E:81:B7:E2:80:1C:AF:AF:70:99:78:6E:0D:1A:F7:E9:A7:9F:3B:A3:74\r\na=ice-options:trickle\r\na=ice-ufrag:sd3CGJ\r\na=ice-pwd:rLTIKcAoOemSGh7z5X1iEfUgsZp3b8Yj\r\nm=audio 9 UDP/TLS/RTP/SAVPF 110\r\nc=IN IP4 0.0.0.0\r\na=sendonly\r\na=mid:ufdniv\r\na=setup:actpass\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=msid:0eh1B7q5yODsdalHwLnjAIkTuXQvxK6VfS98 inpfL4J5dwmOPs3zYIrSguEbVtkh0jM8xvTR\r\na=extmap:4 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=rtpmap:110 OPUS/48000/2\r\na=fmtp:110 sprop-stereo=1;stereo=1;minptime=10;useinbandfec=1\r\na=ssrc:2712961427 cname:71QdLBkAK2UYJ4vE\r\na=ssrc:2712961427 msid:0eh1B7q5yODsdalHwLnjAIkTuXQvxK6VfS98 inpfL4J5dwmOPs3zYIrSguEbVtkh0jM8xvTR\r\na=ssrc:2712961427 mslabel:0eh1B7q5yODsdalHwLnjAIkTuXQvxK6VfS98\r\na=ssrc:2712961427 label:inpfL4J5dwmOPs3zYIrSguEbVtkh0jM8xvTR\r\n",
+        "type": "offer"
+    }
+}
